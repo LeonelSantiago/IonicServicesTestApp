@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Contribuyente DGII
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="eye" item-start></ion-icon>
+      <ion-label floating>RNC</ion-label>
+      <ion-input placehorder="RNC" [(ngModel)]="rnc"></ion-input>
+    </ion-item>
+  
+    <ion-item *ngFor="let b of business">
+      <!-- <h2>{{ b.RGE_RUC }}</h2> -->
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title text-align="center" text-wrap>
+            <ion-card-title text-align="center" text-wrap>
+              {{ b.RGE_NOMBRE | uppercase }}
+            </ion-card-title>
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <!-- <img src="assets/imgs/foto-carnet-ctc.jpg" /> -->
+        <ion-card-content>
+          <ion-list>
+            <ion-item text-wrap>
+              <ion-icon name="call" item-start></ion-icon>
+              {{ b.NOMBRE_COMERCIAL | uppercase }}
+            </ion-item>
+            <ion-item>
+              <ion-icon name="call" item-start></ion-icon>
+              {{ b.RGE_RUC | uppercase }}
+            </ion-item>
+            <ion-item text-wrap>
+              <ion-icon name="mail" item-start></ion-icon>
+              {{ b.CATEGORIA }}
+            </ion-item>
+            <ion-item text-wrap>
+              <ion-icon name="mail" item-start></ion-icon>
+              {{ b.REGIMEN_PAGOS }}
+            </ion-item>
+            <ion-item text-wrap>
+              <ion-icon name="mail" item-start></ion-icon>
+              {{ b.ESTATUS }}
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+    </ion-card>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="getDgiiBusiness()">Obtener contribuyente</button>
+</ion-content>
+
+
