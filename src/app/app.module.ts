@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { UserspagePage } from '../pages/userspage/userspage';
 import { DgiiPage } from '../pages/dgii/dgii';
+import { PokeapiPage } from '../pages/pokeapi/pokeapi';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,8 @@ import { PokeapiServiceProvider } from '../providers/pokeapi-service/pokeapi-ser
     HomePage,
     UserspagePage,
     DgiiPage,
-    ListPage
+    ListPage,
+    PokeapiPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { PokeapiServiceProvider } from '../providers/pokeapi-service/pokeapi-ser
     HomePage,
     UserspagePage,
     DgiiPage,
-    ListPage
+    ListPage,
+    PokeapiPage
   ],
   providers: [
     StatusBar,
