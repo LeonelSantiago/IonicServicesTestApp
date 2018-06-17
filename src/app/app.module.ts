@@ -50,3 +50,4 @@ import { PokeapiServiceProvider } from '../providers/pokeapi-service/pokeapi-ser
   ]
 })
 export class AppModule {}
+

@@ -16,7 +16,7 @@ import { PokeapiPage} from '../pages/pokeapi/pokeapi'
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = PokeapiPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -33,6 +33,8 @@ export class MyApp {
     ];
 
   }
+
+  
 
   initializeApp() {
     this.platform.ready().then(() => {
