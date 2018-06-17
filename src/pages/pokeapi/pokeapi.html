@@ -14,41 +14,54 @@
       <ion-input placehorder="Nombre del Pokemon" [(ngModel)]="pokemonName"></ion-input>
     </ion-item>
     <button ion-button full (click)="getPokemonByName()">Buscar Pokemon</button>
-  
     <ion-item *ngFor="let p of pokemon">
       <!-- <h2>{{ b.RGE_RUC }}</h2> -->
       <ion-card>
           <img src="{{ p.sprites.front_default}}"/>
         <ion-card-content>
-          <ion-card-title text-align="center" text-wrap>
             <ion-card-title align="center" text-wrap>
               #{{p.id}} {{ p.name | uppercase }} 
             </ion-card-title>
-          </ion-card-title>
         </ion-card-content>
       </ion-card>
       <ion-card>
-        <!-- <img src="assets/imgs/foto-carnet-ctc.jpg" /> -->
+        <ion-card-title align="center">
+          Datos básicos
+        </ion-card-title>
         <ion-card-content>
           <ion-list>
-
             <ion-item text-wrap>
-              <ion-icon name="call" item-start></ion-icon>
+              <!-- <ion-icon name="call" item-start></ion-icon> -->
              Peso: {{ p.weight}} libras
             </ion-item>
             <ion-item text-wrap>
-                <ion-icon name="call" item-start></ion-icon>
+                <!-- <ion-icon name="call" item-start></ion-icon> -->
                Altura: {{ p.height}} pies
             </ion-item>
 
             <ion-item  *ngFor="let t of p.types" text-wrap>
-              <ion-icon name="call" item-start></ion-icon>
+              <!-- <ion-icon name="call" item-start></ion-icon> -->
               Tipo: {{ t.type.name }}
             </ion-item>
             
           </ion-list>
         </ion-card-content>
     </ion-card>
+    <ion-card>
+        <ion-card-title align="center">
+          Habilidades
+        </ion-card-title>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let a of p.abilities"  text-wrap>
+              <!-- <ion-icon name="call" item-start></ion-icon> -->
+            <p>Habilidad: {{ a.ability.name | uppercase }}</p>
+            <p>Esta oculta: {{ a.is_hidden }}</p>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+    </ion-card>
+
     </ion-item>
   </ion-list>
 </ion-content>
